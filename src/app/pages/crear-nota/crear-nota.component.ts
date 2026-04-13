@@ -1,13 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotasService } from '../../services/notas.service';
+imports: [ReactiveFormsModule, CommonModule],
 
 @Component({
   selector: 'app-crear-nota',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './crear-nota.component.html'
+  templateUrl: './crear-nota.component.html',
+  styleUrl: './crear-nota.component.scss'
 })
 export class CrearNotaComponent {
   form: FormGroup;

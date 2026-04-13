@@ -1,13 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotasService } from '../../services/notas.service';
+imports: [ReactiveFormsModule, CommonModule],
 
 @Component({
   selector: 'app-editar-nota',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './editar-nota.component.html'
+  templateUrl: './editar-nota.component.html',
+  styleUrl: './editar-nota.component.scss'
 })
 export class EditarNotaComponent implements OnInit {
   form: FormGroup;

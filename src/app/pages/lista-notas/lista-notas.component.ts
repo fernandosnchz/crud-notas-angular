@@ -8,7 +8,8 @@ import { Nota } from '../../models/nota.model';
   selector: 'app-lista-notas',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './lista-notas.component.html'
+  templateUrl: './lista-notas.component.html',
+  styleUrl: './lista-notas.component.scss'
 })
 export class ListaNotasComponent implements OnInit {
   notas: Nota[] = [];

@@ -1,19 +1,29 @@
 <div class="container">
-  <h1>Editar Nota</h1>
-  <form [formGroup]="form">
-    <label>Título</label>
-    <input formControlName="titulo" />
-    <small *ngIf="form.get('titulo')?.invalid && form.get('titulo')?.touched">
-      El título es obligatorio (mínimo 3 caracteres)
-    </small>
-
-    <label>Contenido</label>
-    <textarea formControlName="contenido"></textarea>
-    <small *ngIf="form.get('contenido')?.invalid && form.get('contenido')?.touched">
-      El contenido es obligatorio
-    </small>
-
-    <button (click)="guardar()" [disabled]="form.invalid">Guardar cambios</button>
-    <button (click)="cancelar()">Cancelar</button>
-  </form>
+  <div class="card">
+    <div class="card-header">
+      <h1>Editar nota</h1>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form">
+        <div>
+          <label>Título</label>
+          <input formControlName="titulo" />
+          <small *ngIf="form.get('titulo')?.invalid && form.get('titulo')?.touched">
+            El título es obligatorio (mínimo 3 caracteres)
+          </small>
+        </div>
+        <div>
+          <label>Contenido</label>
+          <textarea formControlName="contenido"></textarea>
+          <small *ngIf="form.get('contenido')?.invalid && form.get('contenido')?.touched">
+            El contenido es obligatorio
+          </small>
+        </div>
+        <div class="botones">
+          <button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+          <button class="btn-guardar" (click)="guardar()" [disabled]="form.invalid">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
