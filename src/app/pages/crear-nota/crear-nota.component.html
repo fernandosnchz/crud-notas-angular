@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Nueva Nota</h1>
+  <form [formGroup]="form">
+    <label>Título</label>
+    <input formControlName="titulo" placeholder="Título de la nota" />
+    <small *ngIf="form.get('titulo')?.invalid && form.get('titulo')?.touched">
+      El título es obligatorio (mínimo 3 caracteres)
+    </small>
+
+    <label>Contenido</label>
+    <textarea formControlName="contenido" placeholder="Escribe tu nota..."></textarea>
+    <small *ngIf="form.get('contenido')?.invalid && form.get('contenido')?.touched">
+      El contenido es obligatorio
+    </small>
+
+    <button (click)="guardar()" [disabled]="form.invalid">Guardar</button>
+    <button (click)="cancelar()">Cancelar</button>
+  </form>
+</div>

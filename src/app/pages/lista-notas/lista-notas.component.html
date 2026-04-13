@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Mis Notas</h1>
+  <button (click)="nueva()">+ Nueva nota</button>
+
+  <p *ngIf="notas.length === 0">No tienes notas todavía.</p>
+
+  <div class="nota" *ngFor="let nota of notas">
+    <h2>{{ nota.titulo }}</h2>
+    <p>{{ nota.contenido }}</p>
+    <small>{{ nota.fecha | date:'dd/MM/yyyy' }}</small>
+    <div>
+      <button (click)="editar(nota.id)">Editar</button>
+      <button (click)="eliminar(nota.id)">Eliminar</button>
+    </div>
+  </div>
+</div>
